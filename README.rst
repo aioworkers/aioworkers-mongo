@@ -1,4 +1,4 @@
 aioworkers-mongo
 ================
 
-Mongo plogin for aioworkers.
+Mongo plugin for `aioworkers`.
