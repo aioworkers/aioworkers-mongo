@@ -1,7 +1,8 @@
 aioworkers-mongo
 ================
 
-Mongo plugin for `aioworkers`.
+.. image:: https://travis-ci.org/aioworkers/aioworkers-mongo.svg?branch=master
+    :target: https://travis-ci.org/aioworkers/aioworkers-mongo
 
-.. image:: https://img.shields.io/travis/aioworkers/aioworkers-mongo.svg
-  :target: https://travis-ci.org/aioworkers/aioworkers-mongo
+
+Mongo plugin for `aioworkers`.
