@@ -1,0 +1,9 @@
+mongo:
+  cls: aioworkers_mongo.base.Connectorgst
+
+worker:
+  cls: aioworkers.worker.base.Worker
+  run: worker.run
+  autorun: yes
+  persist: yes
+  sleep: 5
