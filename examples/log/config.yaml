@@ -1,5 +1,5 @@
 mongo:
-  cls: aioworkers_mongo.base.Connectorgst
+  cls: aioworkers_mongo.base.Connector
 
 worker:
   cls: aioworkers.worker.base.Worker
