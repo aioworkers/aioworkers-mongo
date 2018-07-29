@@ -7,6 +7,7 @@ from aioworkers.core.context import Context
 def config():
     return Config(
         mongo={
+            'cls': 'aioworkers_mongo.base.Connector',
             'uri': 'mongodb://localhost:27017/',
         }
     )
