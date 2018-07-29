@@ -13,4 +13,5 @@ def config():
 
 @pytest.fixture
 def context(config, loop):
-    return Context(config, loop=loop)
+    with Context(config, loop=loop) as ctx:
+        return ctx
