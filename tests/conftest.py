@@ -4,6 +4,11 @@ from aioworkers.core.context import Context
 
 
 @pytest.fixture
+def db_name():
+    return 'test'
+
+
+@pytest.fixture
 def config():
     return Config(
         mongo={
@@ -11,6 +16,7 @@ def config():
             'uri': 'mongodb://localhost:27017/',
         }
     )
+
 
 @pytest.fixture
 def context(config, loop):
