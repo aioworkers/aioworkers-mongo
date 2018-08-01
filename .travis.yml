@@ -1,13 +1,19 @@
 language: python
+
 sudo: false
+
 services: mongodb
+
 python:
 - 3.5
 - 3.6
+
 install:
 - pip install pytest-runner
+
 script:
 - python setup.py test
+
 deploy:
   provider: pypi
   user: abogushov
@@ -15,3 +21,4 @@ deploy:
     secure: 5VS33tbPQvyASsdR6u4Txk+eCxKeKblEOqv/rdnT0pHzeKIzu6rML7VjVTD4W4NfKdWvEibgpS00mNlB2BuhYt5ayxizd5GWS0qTtYx9JPsngErXsvgSfLocnE0YXUp0CieqMjOSAlcNxgaK9BccjJKSEvZsXM8Ia9PQFAN588S3iBZHeZwkBsdAsxGZL9eAP0ImYFv/mrjX6R+O/rSzGXS1CSWgK0I7x1JCkF1yjIvUiuFaVFzxMn9U3klqd82hA8x0XC3HJrtvid1baog/6Ps4BZZhYshuqc8/4MK4CSNRUX01LZ3Y1M40cWlfOcXOZbD3QZa4IajDjWs32714a3DkiGkpn+jj0F7YtEJ5fDQHGGZ9P/TF/1c2Ceu3m8uixfx6acGVK1WcItFxsrgTCcRTG0Vt4XSj63MDvh8VGRVrjpFJAQTho33AmM9nDCeXC9pofdItpG/3DOLcJ/RkHxH+wFaRXZpzz7gcQDUQ6tY/u9ofz5kqzJcKVemObwsU1q7IwknofegR3YMLl6QQ2+78Rxh3zsAsZ7GcZ57ZP+qpla9aMIzWS43A22aapYn4Vsq0mbZWLvdl9G2m8SdcgVR5ZrIJnoCRAlnpcFiay8TLSR+jqyyCrhqT7d9B+mjOFm1z5Suo13Le0ew8TW5YPnsC9dL6tUdWVWNbfXH8p/U=
   on:
     tags: true
+    condition: $TRAVIS_PYTHON_VERSION = 3.6
