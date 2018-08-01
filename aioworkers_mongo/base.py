@@ -9,7 +9,7 @@ logger = logging.getLogger('aioworkers_mongo')
 class Connector(AbstractEntity):
     default_mongo_uri = 'mongodb://localhost:27017/'
 
-    # List of methods that will bind to connector from AsyncIOMotorClient
+    # List of methods that will be bind to connector from AsyncIOMotorClient
     __bind_methods = (
         'list_databases',
         'list_database_names',
