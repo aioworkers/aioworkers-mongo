@@ -9,7 +9,10 @@ requirements = [
 
 test_requirements = [
     'pytest',
+    'pytest-runner',
     'pytest-aiohttp',
+    'pytest-flake8',
+    'flake8-isort',
 ]
 
 setup(

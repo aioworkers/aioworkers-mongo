@@ -8,8 +8,4 @@ python:
   - 3.5
   - 3.6
 
-install:
-  - pip install pytest pytest-aiohttp
-  - pip install -e .
-
-script: pytest tests
+script: python setup.py test
