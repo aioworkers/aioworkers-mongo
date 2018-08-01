@@ -2,6 +2,8 @@
 
 from setuptools import setup, find_packages
 
+version = __import__('aioworkers_mongo').__version__
+
 requirements = [
     'aioworkers>=0.8.0',
     'motor==1.2.2',
@@ -17,7 +19,7 @@ test_requirements = [
 
 setup(
     name='aioworkers-mongo',
-    version='0.0.1',
+    version=version,
     description='Module for working with Mongo DB',
     author='Alexander Bogushov',
     author_email='abogushov@gmail.com',
