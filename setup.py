@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import pathlib
 
 from setuptools import setup, find_packages
 
@@ -17,10 +18,13 @@ test_requirements = [
     'flake8-isort',
 ]
 
+readme = pathlib.Path('README.rst').read_text()
+
 setup(
     name='aioworkers-mongo',
     version=version,
     description='Module for working with Mongo DB',
+    long_description=readme,
     author='Alexander Bogushov',
     author_email='abogushov@gmail.com',
     url='https://github.com/aioworkers/aioworkers-mongo',
@@ -34,7 +38,6 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
     ],
