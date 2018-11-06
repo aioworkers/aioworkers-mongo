@@ -5,14 +5,17 @@ sudo: false
 services: mongodb
 
 python:
-- 3.5
 - 3.6
+- 3.7-dev
 
 install:
 - pip install pytest-runner
 
 script:
 - python setup.py test
+
+before_deploy:
+- echo "__version__ = '$(git describe --tags)'" > aioworkers_mongo/version.py
 
 deploy:
   provider: pypi
