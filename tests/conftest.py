@@ -1,8 +1,5 @@
 import pytest
 
-from aioworkers.core.config import Config
-from aioworkers.core.context import Context
-
 
 @pytest.fixture
 def db_name():
@@ -11,6 +8,7 @@ def db_name():
 
 @pytest.fixture
 def config():
+    from aioworkers.core.config import Config
     return Config(
         mongo={
             'cls': 'aioworkers_mongo.base.Connector',
@@ -21,5 +19,6 @@ def config():
 
 @pytest.fixture
 def context(config, loop):
+    from aioworkers.core.context import Context
     with Context(config, loop=loop) as ctx:
         return ctx
