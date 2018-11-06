@@ -1,4 +1,5 @@
 import pytest
+
 from aioworkers.core.config import Config
 from aioworkers.core.context import Context
 
