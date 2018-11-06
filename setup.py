@@ -7,7 +7,7 @@ version = __import__('aioworkers_mongo').__version__
 
 requirements = [
     'aioworkers>=0.8.0',
-    'motor==1.2.2',
+    'motor >=1.3, < 2.0',
 ]
 
 test_requirements = [
