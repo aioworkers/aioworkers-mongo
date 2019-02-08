@@ -22,4 +22,5 @@ Add this to aioworkers config.yaml:
 You can get access to mongo anywhere via context:
 
 .. code-block:: python
+
     docs = [doc async for doc in context.mongo.db.collection.find({})]
