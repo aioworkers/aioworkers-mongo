@@ -4,6 +4,10 @@ aioworkers-mongo
 .. image:: https://travis-ci.org/aioworkers/aioworkers-mongo.svg?branch=master
     :target: https://travis-ci.org/aioworkers/aioworkers-mongo
 
+.. image:: https://img.shields.io/pypi/pyversions/aioworkers-mongo.svg
+  :target: https://pypi.python.org/pypi/aioworkers-mongo
+  :alt: Python versions
+
 .. image:: https://img.shields.io/pypi/v/aioworkers-mongo.svg
   :target: https://pypi.org/project/aioworkers-mongo
 

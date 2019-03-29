@@ -16,6 +16,7 @@ test_requirements = [
     'pytest-aioworkers',
     'pytest-flake8',
     'flake8-isort',
+    'pyyaml',
 ]
 
 readme = pathlib.Path('README.rst').read_text()
