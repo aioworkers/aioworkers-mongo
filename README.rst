@@ -24,3 +24,21 @@ You can get access to mongo anywhere via context:
 .. code-block:: python
 
     docs = [doc async for doc in context.mongo.db.collection.find({})]
+
+
+Development
+-----------
+
+Install dev requirements:
+
+
+.. code-block:: shell
+
+    pipenv install --dev --skip-lock
+
+
+Run tests:
+
+.. code-block:: shell
+
+    pytest
