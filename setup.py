@@ -17,6 +17,8 @@ test_requirements = [
     'pytest-flake8',
     'flake8-isort',
     'pyyaml',
+
+    # TODO: Remove this when drop support of Python 3.5
     'aiohttp<4.0.0',
     'yarl<1.4.0',
 ]
