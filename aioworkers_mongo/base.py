@@ -34,6 +34,12 @@ class Connector(AbstractEntity):
             if f:
                 setattr(self, method_name, f)
 
+        self.context.on_stop.append(self.stop)
+
+    async def stop(self):
+        if self._client:
+            self._client.close()
+
     def __getattr__(self, item):
         return self._client[item]
 
