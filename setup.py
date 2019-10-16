@@ -17,6 +17,7 @@ test_requirements = [
     'pytest-flake8',
     'flake8-isort',
     'pyyaml',
+    'aiohttp<4.0.0',
 ]
 
 readme = pathlib.Path('README.rst').read_text()
