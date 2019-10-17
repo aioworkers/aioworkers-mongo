@@ -1,12 +1,12 @@
 import logging
 
-from aioworkers.core.base import AbstractEntity
+from aioworkers.core.base import AbstractConnector
 from motor.motor_asyncio import AsyncIOMotorClient
 
 logger = logging.getLogger('aioworkers_mongo')
 
 
-class Connector(AbstractEntity):
+class Connector(AbstractConnector):
     default_mongo_uri = 'mongodb://localhost:27017/'
 
     # List of methods that will be bind to connector from AsyncIOMotorClient
@@ -34,11 +34,11 @@ class Connector(AbstractEntity):
             if f:
                 setattr(self, method_name, f)
 
-        self.context.on_stop.append(self.stop)
+    async def connect(self):
+        pass
 
-    async def stop(self):
-        if self._client:
-            self._client.close()
+    async def disconnect(self):
+        self._client.close()
 
     def __getattr__(self, item):
         return self._client[item]
