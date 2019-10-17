@@ -6,7 +6,7 @@ from setuptools import setup, find_packages
 version = __import__('aioworkers_mongo').__version__
 
 requirements = [
-    'aioworkers>=0.8.0',
+    'aioworkers>=0.13.0',
     'motor >=1.3, < 2.0',
 ]
 
