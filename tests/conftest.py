@@ -3,7 +3,7 @@ import pytest
 
 @pytest.fixture
 def db_name():
-    return 'test'
+    return "test"
 
 
 @pytest.fixture
