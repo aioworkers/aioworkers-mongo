@@ -13,4 +13,4 @@ def config_yaml():
 
 
 async def test_connector(context, db_name):
-    await context.mongo.db.test.insert_one({"test": "test"})
+    await context.mongo[db_name].test.insert_one({"test": "test"})
