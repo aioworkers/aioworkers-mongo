@@ -1,6 +1,7 @@
 import logging
 
 from aioworkers.core.base import AbstractConnector
+from aioworkers.core.config import ValueExtractor
 from motor.motor_asyncio import AsyncIOMotorClient
 
 logger = logging.getLogger("aioworkers_mongo")
@@ -24,18 +25,29 @@ class Connector(AbstractConnector):
     def __init__(self, config=None, *, context=None, loop=None):
         super().__init__(config, context=context, loop=loop)
         self._client = None
+        self._client_config = None
 
-    async def init(self):
-        await super().init()
-        uri = self.config.get("uri", self.default_mongo_uri)
-        self._client = AsyncIOMotorClient(uri)
-        for method_name in self.__bind_methods:
-            f = getattr(self._client, method_name)
-            if f:
-                setattr(self, method_name, f)
+    def set_config(self, config: ValueExtractor) -> None:
+        cfg = config.new_parent(logger=__package__)
+        super().set_config(cfg)
+
+        client_config = dict(self.config.get("client", {}))
+        if client_config:
+            self._client_config = client_config
+            return
+
+        # Support old uri only config.
+        self._client_config = {
+            "host": self.config.get("uri", self.default_mongo_uri),
+        }
 
     async def connect(self):
-        pass
+        if self._client is None:
+            self._client = AsyncIOMotorClient(**self._client_config)
+            for method_name in self.__bind_methods:
+                f = getattr(self._client, method_name)
+                if f:
+                    setattr(self, method_name, f)
 
     async def disconnect(self):
         self._client.close()
